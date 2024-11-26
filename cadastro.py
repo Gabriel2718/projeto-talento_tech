@@ -62,3 +62,20 @@ def cadastrarGabinete():
     g.setLargura(int(input('Largura (em Cm): ')))
     g.setComprimento(int(input('Comprimento (em Cm): ')))
     return g
+
+def cadastrarComponente(op, lista):
+    match op:
+        case 1:
+            lista.append(cadastrarProcessador())
+        case 2:
+            lista.append(cadastrarRam())
+        case 3:
+            lista.append(cadastrarArmazenamento())
+        case 4:
+            lista.append(cadastrarPlacaMae())
+        case 5:
+            lista.append(cadastrarPlacaDeVideo())
+        case 6:
+            lista.append(cadastrarFonte())
+        case 7:
+            lista.append(cadastrarGabinete())
