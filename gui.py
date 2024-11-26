@@ -19,8 +19,10 @@ janela.geometry("1500x500")
 
 estoque = []
 
-def cadastrar():
-    pass
+def cadastrar(entryPreco, entryMarca, entryModelo, entradas):
+    match varTipo.get():
+        case 1:
+            cadastrarComponente(1, estoque)
 
 def atualizarLista():
     pass
@@ -119,6 +121,8 @@ varTipo = tk.StringVar(value="Processador")
 campos = []
 entradas = []
 
+botaoCadastrar = tk.Button(tab1, text="Cadastrar", command=cadastrar, font=("", 15))
+
 def atualizarCampos():
     for campo in campos:
         campo.grid_remove()
@@ -193,6 +197,7 @@ def atualizarCampos():
 
     for i, tipo in enumerate(tipos, start=1):
         tk.Radiobutton(tab1, text=tipo, font=("", 15), variable=varTipo, value=tipo, command=atualizarCampos).grid(row=0, column=i, sticky="w", padx=10, pady=10)
+
 
 atualizarCampos()
 
