@@ -49,34 +49,67 @@ tab2.grid_columnconfigure(0, weight=1)
 aba.add(tab2, text="Lista")
 
 
-
-#labels fixos
-#label1 = tipo
-#label2 = preço
-#label3 = marca
-#label4 = modelo
-
 labelPreco = tk.Label(tab1, text="Preço", font=("", 15)).grid(row=1, column=0, sticky="w", padx=10, pady=10)
+entryPreco = tk.Entry(tab1, font=("", 15)).grid(row=1, column=1, sticky="w", padx=10, pady=10)
+
 labelMarca = tk.Label(tab1, text="Marca", font=("", 15)).grid(row=2, column=0, sticky="w", padx=10, pady=10)
+entryMarca = tk.Entry(tab1, font=("", 15)).grid(row=2, column=1, sticky="w", padx=10, pady=10)
+
 labelModelo = tk.Label(tab1, text="Modelo", font=("", 15)).grid(row=3, column=0, sticky="w", padx=10, pady=10)
+entryModelo = tk.Entry(tab1, font=("", 15)).grid(row=3, column=1, sticky="w", padx=10, pady=10)
+
+
 
 labelClock = tk.Label(tab1, text="", font=("", 15))
+entryClock = tk.Entry(tab1, font=("", 15))
+
 labelTipo = tk.Label(tab1, text="Tipo", font=("", 15))
+entryTipo = tk.Entry(tab1, font=("", 15))
+
 labelCapacidade = tk.Label(tab1, text="Capacidade", font=("", 15))
+entryCapacidade = tk.Entry(tab1, font=("", 15))
+
 labelNucleos  = tk.Label(tab1, text="Quantidade de núcleos", font=("", 15))
+entryNucleos = tk.Entry(tab1, font=("", 15))
+
 labelSocket = tk.Label(tab1, text="Socket", font=("", 15))
+entrySocket = tk.Entry(tab1, font=("", 15))
+
 labelChipSet = tk.Label(tab1, text="Chip set", font=("", 15))
+entryChipSet = tk.Entry(tab1, font=("", 15))
+
 labelLeitura = tk.Label(tab1, text="Leitura (em MB/s)", font=("", 15))
+entryLeitura = tk.Entry(tab1, font=("", 15))
+
 labelEscrita = tk.Label(tab1, text="Escrita (em MB/s)", font=("", 15))
+entryEscrita = tk.Entry(tab1, font=("", 15))
+
 labelChipGrafico = tk.Label(tab1, text="Chip gráfico", font=("", 15))
+entryChipGrafico = tk.Entry(tab1, font=("", 15))
+
 labelClockGpu = tk.Label(tab1, text="Clock da GPU (em MHz)", font=("", 15))
+entryClockGpu = tk.Entry(tab1, font=("", 15))
+
 labelVram = tk.Label(tab1, text="VRAM (em GB)", font=("", 15))
+entryVram = tk.Entry(tab1, font=("", 15))
+
 labelClockVram = tk.Label(tab1, text="Clock da VRAM (em MHz)", font=("", 15))
+entryClockVram = tk.Entry(tab1, font=("", 15))
+
 labelPotencia = tk.Label(tab1, text="Potência (em Watts)", font=("", 15))
+entryPotencia = tk.Entry(tab1, font=("", 15))
+
 labelAltura = tk.Label(tab1, text="Alura (em Cm)", font=("", 15))
+entryAltura = tk.Entry(tab1, font=("", 15))
+
 labelLargura = tk.Label(tab1, text="Largura (em Cm)", font=("", 15))
+entryLargura = tk.Entry(tab1, font=("", 15))
+
 labelComprimento = tk.Label(tab1, text="Comprimento (em Cm)", font=("", 15))
+entryComprimento = tk.Entry(tab1, font=("", 15))
+
 labelFormato = tk.Label(tab1, text="Formato", font=("", 15))
+entryFormato = tk.Entry(tab1, font=("", 15))
 
 tipos = ["Processador", "Ram", "Armazenamento", "PlacaMae", "PlacaDeVideo", "Fonte", "Gabinete"]
 
@@ -84,46 +117,79 @@ tk.Label(tab1, text="Tipo", font=("", 15)).grid(row=0, column=0, sticky="w", pad
 varTipo = tk.StringVar(value="Processador")
 
 campos = []
+entradas = []
 
 def atualizarCampos():
     for campo in campos:
         campo.grid_remove()
+
+    for entrada in entradas:
+        entrada.grid_remove()
+
     campos.clear()
+    entradas.clear()
+
     match varTipo.get():
         case "Processador":
             labelClock.config(text="Clock (em GHz)")
             campos.append(labelClock)
             campos.append(labelNucleos)
             campos.append(labelSocket)
+            entradas.append(entryClock)
+            entradas.append(entryNucleos)
+            entradas.append(entrySocket)
         case "Ram":
             labelClock.config(text="Clock (em MHz)")
             campos.append(labelClock)
             campos.append(labelTipo)
             campos.append(labelCapacidade)
+            entradas.append(entryTipo)
+            entradas.append(entryCapacidade)
+            entradas.append(entryClock)
         case "Armazenamento":
             campos.append(labelTipo)
             campos.append(labelCapacidade)
             campos.append(labelLeitura)
             campos.append(labelEscrita)
+            entradas.append(entryTipo)
+            entradas.append(entryCapacidade)
+            entradas.append(entryLeitura)
+            entradas.append(entryEscrita)
         case "PlacaMae":
             campos.append(labelFormato)
             campos.append(labelChipSet)
+            entradas.append(entryFormato)
+            entradas.append(entryChipSet)
         case "PlacaDeVideo":
             campos.append(labelChipGrafico)
             campos.append(labelClockGpu)
             campos.append(labelVram)
             campos.append(labelClockVram)
+            entradas.append(entryChipGrafico)
+            entradas.append(entryClockGpu)
+            entradas.append(entryVram)
+            entradas.append(entryClockVram)
         case "Fonte":
             campos.append(labelFormato)
             campos.append(labelPotencia)
+            entradas.append(entryFormato)
+            entradas.append(entryPotencia)
         case "Gabinete":
             campos.append(labelFormato)
             campos.append(labelAltura)
             campos.append(labelLargura)
             campos.append(labelComprimento)
+            entradas.append(entryFormato)
+            entradas.append(entryAltura)
+            entradas.append(entryLargura)
+            entradas.append(entryComprimento)
 
     for i, campo in enumerate(campos, start=4):
         campo.grid(row=i, column=0, sticky="w", padx=10, pady=10)
+
+    for i, entrada in enumerate(entradas, start=4):
+        entrada.grid(row=i, column=1, sticky="w", padx=10, pady=10)
+        
 
     for i, tipo in enumerate(tipos, start=1):
         tk.Radiobutton(tab1, text=tipo, font=("", 15), variable=varTipo, value=tipo, command=atualizarCampos).grid(row=0, column=i, sticky="w", padx=10, pady=10)
