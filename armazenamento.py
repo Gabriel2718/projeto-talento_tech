@@ -21,4 +21,4 @@ class Armazenamento(Memoria):
 
     
     def consultarDados(self):
-        return (f'Preco: {self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\nTipo: {self.getTipo()}\nCapacidade: {self.getCapacidade()} GB\nLeitura: {self.getLeitura()} MB/s\nEscrita: {self.getEscrita()} MB/s')
+        return (f'Módulo de armazenamento\nPreço: R${self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\nTipo: {self.getTipo()}\nCapacidade: {self.getCapacidade()} GB\nLeitura: {self.getLeitura()} MB/s\nEscrita: {self.getEscrita()} MB/s')

@@ -35,4 +35,4 @@ class PlacaDeVideo(Componente):
 
     
     def consultarDados(self):
-        return (f'Preco: {self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\nChip gráfico: {self.getChipGrafico()}\nClock (GPU): {self.getClockGpu()} MHz\nVRAM: {self.getVram()} GB\nClock (VRAM): {self.getVram()} MHz')
+        return (f'Placa de vídeo\nPreço: R${self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\nChip gráfico: {self.getChipGrafico()}\nClock (GPU): {self.getClockGpu()} MHz\nVRAM: {self.getVram()} GB\nClock (VRAM): {self.getVram()} MHz')

@@ -35,4 +35,4 @@ class Gabinete(Componente):
 
 
     def consultarDados(self):
-        return (f'Preco: {self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\nFormato: {self.getFormato()}\nAltura: {self.getAltura()} Cm\nLargura: {self.getLargura()} Cm\nComprimento: {self.getComprimento()} Cm')
+        return (f'Gabinete\nPreço: R${self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\nFormato: {self.getFormato()}\nAltura: {self.getAltura()} Cm\nLargura: {self.getLargura()} Cm\nComprimento: {self.getComprimento()} Cm')
