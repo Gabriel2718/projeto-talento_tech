@@ -12,6 +12,11 @@ def cadastrarInfoBasicas(c):
     c.setModelo(str(input('Modelo: ')))
     return c
 
+def cadastrarInfoBasicas(c, preco, marca, modelo):
+    c.setPreco(preco)
+    c.setMarca(marca)
+    c.setModelo(modelo)
+    return c
 
 def cadastrarProcessador():
     p = cadastrarInfoBasicas(Processador())
@@ -20,11 +25,25 @@ def cadastrarProcessador():
     p.setNucleos(int(input('Quantidade de núcleos: ')))
     return p
 
+def cadastrarProcessador(preco, marca, modelo, clock, socket, nucleos):
+    p = cadastrarInfoBasicas(Processador(), preco, marca, modelo)
+    p.setClock(clock)
+    p.setSocket(socket)
+    p.setNucleos(nucleos)
+    return p
+
 def cadastrarRam():
     r = cadastrarInfoBasicas(Ram())
     r.setTipo(str(input('Tipo: ')))
     r.setCapacidade(int(input('Capacidade (em GB): ')))
     r.setClock(int(input('Clock (em MHz): ')))
+    return r
+
+def cadastrarRam(preco, marca, modelo, tipo, capacidade, clock):
+    r = cadastrarInfoBasicas(Ram(), preco, marca, modelo)
+    r.setTipo(tipo)
+    r.setCapacidade(capacidade)
+    r.setClock(clock)
     return r
 
 def cadastrarArmazenamento():
@@ -35,10 +54,24 @@ def cadastrarArmazenamento():
     a.setEscrita(int(input('Escrita (em MB/s): ')))
     return a
 
+def cadastrarArmazenamento(preco, marca, modelo, tipo, capacidade, leitura, escrita):
+    a = cadastrarInfoBasicas(Armazenamento(), preco, marca, modelo)
+    a.setTipo(tipo)
+    a.setCapacidade(capacidade)
+    a.setLeitura(leitura)
+    a.setEscrita(escrita)
+    return a
+
 def cadastrarPlacaMae():
     pm = cadastrarInfoBasicas(PlacaMae())
     pm.setChipSet(str(input('Chip set: ')))
     pm.setFormato(str(input('Formato: ')))
+    return pm
+
+def cadastrarPlacaMae(preco, marca, modelo, chipSet, formato):
+    pm = cadastrarInfoBasicas(PlacaMae(), preco, marca, modelo)
+    pm.setChipSet(chipSet)
+    pm.setFormato(formato)
     return pm
 
 def cadastrarPlacaDeVideo():
@@ -49,10 +82,24 @@ def cadastrarPlacaDeVideo():
     pv.setClockVram(int(input('Clock da VRAM (em MHz): ')))
     return pv
 
+def cadastrarPlacaDeVideo(preco, marca, modelo, chipGrafico, clockGpu, vram, clockVram):
+    pv = cadastrarInfoBasicas(PlacaDeVideo(), preco, marca, modelo)
+    pv.setChipGrafico(chipGrafico)
+    pv.setClockGpu(clockGpu)
+    pv.setVram(vram)
+    pv.setClockVram(clockVram)
+    return pv
+
 def cadastrarFonte():
     f = cadastrarInfoBasicas(Fonte())
     f.setPotencia(int(input('Potência (em Watts): ')))
     f.setFormato(str(input('Formato: ')))
+    return f
+
+def cadastrarFonte(preco, marca, modelo, potencia, formato):
+    f = cadastrarInfoBasicas(Fonte(), preco, marca, modelo)
+    f.setPotencia(potencia)
+    f.setFormato(formato)
     return f
 
 def cadastrarGabinete():
@@ -61,6 +108,14 @@ def cadastrarGabinete():
     g.setAltura(int(input('Altura (em Cm): ')))
     g.setLargura(int(input('Largura (em Cm): ')))
     g.setComprimento(int(input('Comprimento (em Cm): ')))
+    return g
+
+def cadastrarGabinete(preco, marca, modelo, formato, altura, largura, comprimento):
+    g = cadastrarInfoBasicas(Gabinete(), preco, marca, modelo)
+    g.setFormato(formato)
+    g.setAltura(altura)
+    g.setLargura(largura)
+    g.setComprimento(comprimento)
     return g
 
 def cadastrarComponente(op, lista):
