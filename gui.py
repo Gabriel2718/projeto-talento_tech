@@ -19,10 +19,16 @@ janela.geometry("1500x500")
 
 estoque = []
 
-def cadastrar(entryPreco, entryMarca, entryModelo, entradas):
-    match varTipo.get():
-        case 1:
-            cadastrarComponente(1, estoque)
+campos = []
+entradas = []
+
+valores = []
+
+for val in entradas:
+    valores.append(val.get())
+
+def cadastrar(entryPreco, entryMarca, entryModelo, valores):
+        cadastrarComponente(1, estoque, entryPreco, entryMarca, entryModelo,)
 
 def atualizarLista():
     pass
@@ -117,9 +123,6 @@ tipos = ["Processador", "Ram", "Armazenamento", "PlacaMae", "PlacaDeVideo", "Fon
 
 tk.Label(tab1, text="Tipo", font=("", 15)).grid(row=0, column=0, sticky="w", padx=10, pady=10)
 varTipo = tk.StringVar(value="Processador")
-
-campos = []
-entradas = []
 
 botaoCadastrar = tk.Button(tab1, text="Cadastrar", command=cadastrar, font=("", 15))
 
