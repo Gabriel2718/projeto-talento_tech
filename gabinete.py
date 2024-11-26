@@ -1,11 +1,11 @@
 from componente import Componente
 class Gabinete(Componente):
-    def __init__(self, preco, marca, modelo, formato, altura, largura, comprimento):
-        super().__init__(preco, marca, modelo)
-        self.__formato = formato
-        self.__altura = altura
-        self.__largura = largura
-        self.__comprimento = comprimento
+    def __init__(self):
+        super().__init__()
+        self.__formato = None
+        self.__altura = 0
+        self.__largura = 0
+        self.__comprimento = 0
 
     #getters
     def getFormato(self):
@@ -35,6 +35,4 @@ class Gabinete(Componente):
 
 
     def consultarDados(self):
-        return (f'Preco: {self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\n,
-                Formato: {self.getFormato()}\nAltura: {self.getAltura()} Cm\nLargura: {self.getLargura()} Cm\n,
-                Comprimento: {self.getComprimento()} Cm')
+        return (f'Preco: {self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\nFormato: {self.getFormato()}\nAltura: {self.getAltura()} Cm\nLargura: {self.getLargura()} Cm\nComprimento: {self.getComprimento()} Cm')

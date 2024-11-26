@@ -1,9 +1,9 @@
 from componente import Componente
 class Fonte(Componente):
-    def __init__(self, preco, marca, modelo, potencia, formato):
-        super().__init__(preco, marca, modelo)
-        self.__potencia = potencia
-        self.__formato = formato
+    def __init__(self):
+        super().__init__()
+        self.__potencia = 0
+        self.__formato = None
 
     #getters
     def getPotencia(self):
@@ -21,5 +21,4 @@ class Fonte(Componente):
 
 
     def consultarDados(self):
-        return (f'Preco: {self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\n,
-                Potência: {self.getPotencia()}\nFormato: {self.getFormato()}')
+        return (f'Preco: {self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\nPotência: {self.getPotencia()}\nFormato: {self.getFormato()}')

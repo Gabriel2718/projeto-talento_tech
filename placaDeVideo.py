@@ -1,11 +1,11 @@
 from componente import Componente
 class PlacaDeVideo(Componente):
-    def __init__(self, preco, marca, modelo, chipGrafico, clockGpu, vram, clockVram):
-        super().__init__(preco, marca, modelo)
-        self.__chipGrafico = chipGrafico
-        self.__clockGpu = clockGpu
-        self.__vram = vram
-        self.__clockVram = clockVram
+    def __init__(self):
+        super().__init__()
+        self.__chipGrafico = None
+        self.__clockGpu = 0
+        self.__vram = 0
+        self.__clockVram = 0
 
     #getters
     def getChipGrafico(self):
@@ -35,6 +35,4 @@ class PlacaDeVideo(Componente):
 
     
     def consultarDados(self):
-        return (f'Preco: {self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\n,
-                Chip gráfico: {self.getChipGrafico()}\nClock (GPU): {self.getClockGpu()} MHz\n,
-                VRAM: {self.getVram()} GB\nClock (VRAM): {self.getVram()} MHz')
+        return (f'Preco: {self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\nChip gráfico: {self.getChipGrafico()}\nClock (GPU): {self.getClockGpu()} MHz\nVRAM: {self.getVram()} GB\nClock (VRAM): {self.getVram()} MHz')

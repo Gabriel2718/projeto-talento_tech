@@ -1,9 +1,9 @@
 from componente import Componente
 class PlacaMae(Componente):
-    def __init__(self, preco, marca, modelo, chipSet, formato):
-        super().__init__(preco, marca, modelo)
-        self.__chipSet = chipSet
-        self.__formato = formato
+    def __init__(self):
+        super().__init__()
+        self.__chipSet = None
+        self.__formato = None
 
     #getters
     def getChipSet(self):
@@ -21,5 +21,4 @@ class PlacaMae(Componente):
 
     
     def consultarDados(self):
-        return (f'Preco: {self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\n,
-                Chip set: {self.getChipSet()}\nFormato: {self.getFormato()}')
+        return (f'Preco: {self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\nChip set: {self.getChipSet()}\nFormato: {self.getFormato()}')
