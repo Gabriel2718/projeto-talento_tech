@@ -1,8 +1,8 @@
 from memoria import Memoria
 class Ram(Memoria):
-    def __init__(self, preco, marca, modelo, tipo, capacidade, clock):
-        super().__init__(preco, marca, modelo, tipo, capacidade)
-        self.__clock = clock
+    def __init__(self):
+        super().__init__()
+        self.__clock = 0
 
     #getters
     def getClock(self):
@@ -14,5 +14,4 @@ class Ram(Memoria):
 
     
     def consultarDados(self):
-        return (f'Preco: {self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\n,
-                Tipo: {self.getTipo()}\nCapacidade: {self.getCapacidade()} GB\nClock: {self.getClock()} MHz')
+        return (f'Preco: {self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\nTipo: {self.getTipo()}\nCapacidade: {self.getCapacidade()} GB\nClock: {self.getClock()} MHz')

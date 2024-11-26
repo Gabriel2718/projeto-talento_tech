@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 class Componente(ABC):
-    def __init__(self, preco, marca, modelo):
-        self.__preco = preco
-        self.__marca = marca
-        self.__modelo = modelo
+    def __init__(self):
+        self.__preco = 0.0
+        self.__marca = None
+        self.__modelo = None
 
     #getters
     def getPreco(self):

@@ -1,10 +1,9 @@
-from abc import ABC, abstractmethod
 from componente import Componente
-class Memoria(ABC, Componente):
-    def __init__(self, preco, marca, modelo, tipo, capacidade):
-        super().__init__(preco, marca, modelo)
-        self.__tipo = tipo
-        self.__capacidade = capacidade
+class Memoria(Componente):
+    def __init__(self):
+        super().__init__()
+        self.__tipo = None
+        self.__capacidade = 0
 
     #getters
     def getTipo(self):
@@ -20,6 +19,6 @@ class Memoria(ABC, Componente):
     def setCapacidade(self, capacidade):
         self.__capacidade = capacidade
 
-    @abstractmethod
+
     def consultarDados(self):
         pass

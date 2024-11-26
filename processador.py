@@ -1,10 +1,10 @@
 from componente import Componente
 class Processador(Componente):
-    def __init__(self, preco, marca, modelo, clock, socket, nucleos):
-        super().__init__(preco, marca, modelo)
-        self.__clock = clock
-        self.__socket = socket
-        self.__nucleos = nucleos
+    def __init__(self):
+        super().__init__()
+        self.__clock = 0.0
+        self.__socket = None
+        self.__nucleos = 0
 
     #getters
     def getClock(self):
@@ -28,5 +28,4 @@ class Processador(Componente):
 
     
     def consultarDados(self):
-        return (f'Preco: {self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\n,
-                Clock: {self.getClock()} GHz\nSocket: {self.getSocket()}\nNucleos: {self.getNucleos()}')
+        return (f'Preco: {self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\nClock: {self.getClock()} GHz\nSocket: {self.getSocket()}\nNucleos: {self.getNucleos()}')
