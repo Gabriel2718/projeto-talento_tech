@@ -1,4 +1,4 @@
-**Talento Tech-PR**
+**Talento Tech-PR**<br>
 Autor: <a href="https://www.linkedin.com/in/gabriel-carvalho-reginato/" target="_blank">Gabriel Carvalho Reginato<a>
 # Projeto invididual com Git
 
