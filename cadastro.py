@@ -135,19 +135,19 @@ def cadastrarComponente(op, lista):
         case 7:
             lista.append(cadastrarGabinete())
 
-def cadastrarComponente(op, lista, preco, marca, modelo, valores):
+def cadastrarComponente(op, lista, valores):
     match op:
         case 1:
-            lista.append(cadastrarProcessador(preco, marca, modelo, valores[0], valores[1], valores[2]))
+            lista.append(cadastrarProcessador(valores[0], valores[1], valores[2], valores[3], valores[4], valores[5]))
         case 2:
-            lista.append(cadastrarRam(preco, marca, modelo, valores[0], valores[1], valores[2]))
+            lista.append(cadastrarRam(valores[0], valores[1], valores[2], valores[3], valores[4], valores[5]))
         case 3:
-            lista.append(cadastrarArmazenamento(preco, marca, modelo, valores[0], valores[1], valores[2], valores[3]))
+            lista.append(cadastrarArmazenamento(valores[0], valores[1], valores[2], valores[3], valores[4], valores[5], valores[6]))
         case 4:
-            lista.append(cadastrarPlacaMae(preco, marca, modelo, valores[0], valores[1]))
+            lista.append(cadastrarPlacaMae(valores[0], valores[1], valores[2], valores[3], valores[4]))
         case 5:
-            lista.append(cadastrarPlacaDeVideo(preco, marca, modelo, valores[0], valores[1], valores[2], valores[3]))
+            lista.append(cadastrarPlacaDeVideo(valores[0], valores[1], valores[2], valores[3], valores[4], valores[5], valores[6]))
         case 6:
-            lista.append(cadastrarFonte(preco, marca, modelo, valores[0], valores[1]))
+            lista.append(cadastrarFonte(valores[0], valores[1], valores[2], valores[3], valores[4]))
         case 7:
-            lista.append(cadastrarGabinete(preco, marca, modelo, valores[0], valores[1], valores[2], valores[3]))
+            lista.append(cadastrarGabinete(valores[0], valores[1], valores[2], valores[3], valores[4], valores[5], valores[6]))

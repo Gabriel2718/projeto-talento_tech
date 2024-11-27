@@ -14,4 +14,4 @@ class Ram(Memoria):
 
     
     def consultarDados(self):
-        return (f'Memória RAM\nPreço: R${self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\nTipo: {self.getTipo()}\nCapacidade: {self.getCapacidade()} GB\nClock: {self.getClock()} MHz')
+        return (f'Memória RAM \nPreço: R${self.getPreco()} \nMarca: {self.getMarca()} \nModelo: {self.getModelo()} \nTipo: {self.getTipo()} \nCapacidade: {self.getCapacidade()} GB \nClock: {self.getClock()} MHz')

@@ -28,4 +28,4 @@ class Processador(Componente):
 
     
     def consultarDados(self):
-        return (f'Processador\nPreço: R${self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\nClock: {self.getClock()} GHz\nSocket: {self.getSocket()}\nNucleos: {self.getNucleos()}')
+        return (f'Processador \nPreço: R${self.getPreco()} \nMarca: {self.getMarca()} \nModelo: {self.getModelo()} \nClock: {self.getClock()} GHz \nSocket: {self.getSocket()} \nNucleos: {self.getNucleos()}')

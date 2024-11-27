@@ -18,20 +18,45 @@ janela.title("Cadastro de Componentes no Estoque")
 janela.geometry("1500x500")
 
 estoque = []
-
 campos = []
 entradas = []
 
-valores = []
+def cadastrar():
+        tipo = 0
+        entradaVazia = False
+        match varTipo.get():
+            case "Processador":
+                tipo = 1
+            case "Ram":
+                tipo = 2
+            case "Armazenamento":
+                tipo = 3
+            case "PlacaMae":
+                tipo = 4
+            case "PlacaDeVideo":
+                tipo = 5
+            case "Fonte":
+                tipo = 6
+            case "Gabinete":
+                tipo = 7
 
-for val in entradas:
-    valores.append(val.get())
+        valores = []
 
-def cadastrar(entryPreco, entryMarca, entryModelo, valores):
-        cadastrarComponente(1, estoque, entryPreco, entryMarca, entryModelo,)
+        for val in entradas:
+            valores.append(val.get())
+            if val.get() == "":
+                entradaVazia= True
+        
+        if not entradaVazia:
+            cadastrarComponente(tipo, estoque, valores)
+            messagebox.showinfo(f'Componente do tipo {varTipo.get()} cadastrado com sucesso')
+        else:
+            messagebox.showinfo("Todos os campos devem estar preenchidos")
 
 def atualizarLista():
-    pass
+    listabox.delete(0, tk.END)
+    for obj in estoque:
+        listabox.insert(tk.END, obj.consultarDados())
 
 janela.grid_rowconfigure(0, weight=1)
 janela.grid_columnconfigure(0, weight=1)
@@ -50,21 +75,17 @@ for i in range(7):
 
 aba.add(tab1, text="Cadastro")
 
-tab2 = tk.Frame(aba)
-tab2.grid_rowconfigure(0, weight=1)
-tab2.grid_columnconfigure(0, weight=1)
-
-aba.add(tab2, text="Lista")
-
-
 labelPreco = tk.Label(tab1, text="Preço", font=("", 15)).grid(row=1, column=0, sticky="w", padx=10, pady=10)
-entryPreco = tk.Entry(tab1, font=("", 15)).grid(row=1, column=1, sticky="w", padx=10, pady=10)
+entryPreco = tk.Entry(tab1, font=("", 15))
+entryPreco.grid(row=1, column=1, sticky="w", padx=10, pady=10)
 
 labelMarca = tk.Label(tab1, text="Marca", font=("", 15)).grid(row=2, column=0, sticky="w", padx=10, pady=10)
-entryMarca = tk.Entry(tab1, font=("", 15)).grid(row=2, column=1, sticky="w", padx=10, pady=10)
+entryMarca = tk.Entry(tab1, font=("", 15))
+entryMarca.grid(row=2, column=1, sticky="w", padx=10, pady=10)
 
 labelModelo = tk.Label(tab1, text="Modelo", font=("", 15)).grid(row=3, column=0, sticky="w", padx=10, pady=10)
-entryModelo = tk.Entry(tab1, font=("", 15)).grid(row=3, column=1, sticky="w", padx=10, pady=10)
+entryModelo = tk.Entry(tab1, font=("", 15))
+entryModelo.grid(row=3, column=1, sticky="w", padx=10, pady=10)
 
 
 
@@ -107,7 +128,7 @@ entryClockVram = tk.Entry(tab1, font=("", 15))
 labelPotencia = tk.Label(tab1, text="Potência (em Watts)", font=("", 15))
 entryPotencia = tk.Entry(tab1, font=("", 15))
 
-labelAltura = tk.Label(tab1, text="Alura (em Cm)", font=("", 15))
+labelAltura = tk.Label(tab1, text="Altura (em Cm)", font=("", 15))
 entryAltura = tk.Entry(tab1, font=("", 15))
 
 labelLargura = tk.Label(tab1, text="Largura (em Cm)", font=("", 15))
@@ -134,7 +155,11 @@ def atualizarCampos():
         entrada.grid_remove()
 
     campos.clear()
+
     entradas.clear()
+    entradas.append(entryPreco)
+    entradas.append(entryMarca)
+    entradas.append(entryModelo)
 
     match varTipo.get():
         case "Processador":
@@ -194,13 +219,26 @@ def atualizarCampos():
     for i, campo in enumerate(campos, start=4):
         campo.grid(row=i, column=0, sticky="w", padx=10, pady=10)
 
-    for i, entrada in enumerate(entradas, start=4):
-        entrada.grid(row=i, column=1, sticky="w", padx=10, pady=10)
+    for i, entrada in enumerate(entradas, start=0):
+        entrada.grid(row=(i+1), column=1, sticky="w", padx=10, pady=10)
+
+    botaoCadastrar.grid(row=len(campos)+4, column=1, sticky="nsew",padx=15, pady=15)
         
 
-    for i, tipo in enumerate(tipos, start=1):
+for i, tipo in enumerate(tipos, start=1):
         tk.Radiobutton(tab1, text=tipo, font=("", 15), variable=varTipo, value=tipo, command=atualizarCampos).grid(row=0, column=i, sticky="w", padx=10, pady=10)
 
+
+tab2 = tk.Frame(aba)
+tab2.grid_rowconfigure(0, weight=1)
+tab2.grid_columnconfigure(0, weight=1)
+
+aba.add(tab2, text="Lista")
+
+listabox = tk.Listbox(tab2)
+listabox.config(font=("", 15))
+listabox.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
+tk.Button(tab2, text="Atualizar", command=atualizarLista, font=("", 15)).grid(row=1, column=0)
 
 atualizarCampos()
 
