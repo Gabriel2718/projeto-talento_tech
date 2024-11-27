@@ -21,4 +21,4 @@ class Fonte(Componente):
 
 
     def consultarDados(self):
-        return (f'Fonte\nPreço: R${self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\nPotência: {self.getPotencia()}\nFormato: {self.getFormato()}')
+        return (f'Fonte \nPreço: R${self.getPreco()} \nMarca: {self.getMarca()} \nModelo: {self.getModelo()} \nPotência: {self.getPotencia()} \nFormato: {self.getFormato()}')

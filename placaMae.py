@@ -21,4 +21,4 @@ class PlacaMae(Componente):
 
     
     def consultarDados(self):
-        return (f'PLaca-mãe\nPreço: R${self.getPreco()}\nMarca: {self.getMarca()}\nModelo: {self.getModelo()}\nChip set: {self.getChipSet()}\nFormato: {self.getFormato()}')
+        return (f'PLaca-mãe \nPreço: R${self.getPreco()} \nMarca: {self.getMarca()} \nModelo: {self.getModelo()} \nChip set: {self.getChipSet()} \nFormato: {self.getFormato()}')
