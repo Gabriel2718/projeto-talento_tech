@@ -52,7 +52,7 @@ def cadastrar():
             messagebox.showinfo(f'Componente do tipo {varTipo.get()} cadastrado com sucesso')
         else:
             messagebox.showinfo("Todos os campos devem estar preenchidos")
-
+            
 def atualizarLista():
     listabox.delete(0, tk.END)
     for obj in estoque:
